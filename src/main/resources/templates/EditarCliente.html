@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<html>
+	<head>
+		<title>Editar Cliente</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1>Modificar dados do Cliente</h1>
+		<form method="post" action="#" th:action="@{/alterar/{id}(id=${dadosCliente.get().getId()})}" th:object="${dadosCliente}" >
+			<input type="hidden" name="_method" value="PUT"/>
+		    <label for="name">Cliente</label>
+		    <input type="text" id="name" th:field="*{name}"  />
+		    <label for="email">Email</label>
+		    <input type="text"  id="email" th:field="*{email}" />
+		    <label for="address">Endereço</label>
+		    <input type="text"  id="address" th:field="*{address}"/>
+		    <input type="submit" value="Modifica Cliente">   
+		</form>
+		<div class="result_message">
+		    	<h3>Os dados foram modificados.</h3>
+		        <p>Liste todos os clientes <a href="/">index</a></p>
+	    </div>
+	</body>
+</html>
